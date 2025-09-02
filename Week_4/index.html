@@ -1,0 +1,123 @@
+<!doctype html>
+
+<html>
+    <head>
+
+        <!-- CSS code -->
+        <style>
+        form {
+            margin: auto;
+            width: 35%;
+        }
+
+        .result {
+            margin: auto;
+            width: 35%;
+            border: 1px solid #ccc;
+        }
+        </style>
+
+        <title> Credit Card Default Predictor Machine Learning Model</title>
+    </head>
+
+    <body>
+
+        <!-- Use the action attribute to call the 'main' function -->
+        <form action="{{ url_for('main') }}" method="POST">
+        <fieldset>
+            <legend>Input values:</legend>
+            LIMIT_BAL:
+            <!-- Required attribute is used to make sure people input values -->
+            <input name="LIMIT_BAL" type="number" required>
+            <br>
+            <br> SEX:
+            <input name="SEX" type="number" required>
+            <br>
+            <br> EDUCATION:
+            <input name="EDUCATION" type="number" required>
+            <br>
+            <br> MARRIAGE:
+            <input name="MARRIAGE" type="number" required>
+            <br>
+            <br> AGE:
+            <input name="AGE" type="number" required>
+            <br>
+            <br> PAY_1:
+            <input name="PAY_1" type="number" required>
+            <br>
+            <br> PAY_2:
+            <input name="PAY_2" type="number" required>
+            <br>
+            <br> PAY_3:
+            <input name="PAY_3" type="number" required>
+            <br>
+            <br> PAY_4:
+            <input name="PAY_4" type="number" required>
+            <br>
+            <br> PAY_5:
+            <input name="PAY_5" type="number" required>
+            <br>
+            <br> PAY_6:
+            <input name="PAY_6" type="number" required>
+            <br>
+            <br> BILL_AMT1:
+            <input name="BILL_AMT1" type="number" required>
+            <br>
+            <br> BILL_AMT2:
+            <input name="BILL_AMT2" type="number" required>
+            <br>
+            <br> BILL_AMT3:
+            <input name="BILL_AMT3" type="number" required>
+            <br>
+            <br> BILL_AMT4:
+            <input name="BILL_AMT4" type="number" required>
+            <br>
+            <br> BILL_AMT5:
+            <input name="BILL_AMT5" type="number" required>
+            <br>
+            <br> BILL_AMT6:
+            <input name="BILL_AMT6" type="number" required>
+            <br>
+            <br> PAY_AMT1:
+            <input name="PAY_AMT1" type="number" required>
+            <br>
+            <br> PAY_AMT2:
+            <input name="PAY_AMT2" type="number" required>
+            <br>
+            <br> PAY_AMT3:
+            <input name="PAY_AMT3" type="number" required>
+            <br>
+            <br> PAY_AMT4:
+            <input name="PAY_AMT4" type="number" required>
+            <br>
+            <br> PAY_AMT5:
+            <input name="PAY_AMT5" type="number" required>
+            <br>
+            <br> PAY_AMT6:
+            <input name="PAY_AMT6" type="number" required>
+            <br>
+            <br>
+            <input type="submit">
+        </fieldset>
+        </form>
+
+        <br>
+
+        <div class="result" align="center">
+            <!-- Our 'result' is false until a prediction has been made -->
+            {% if result %}
+            <!-- Loop through dictionary and print key:value pair -->
+                {% for variable in original_input %}
+                    <b>{{ variable }}:</b> {{ original_input[variable] }}
+                {% endfor %}
+                <br>
+                <!-- Print prediction -->
+                <br> Predicted Customer Card Usage(0--> Default Payment; 1--> Not Default Payment:
+                <p style="font-size:50px">{{ result }}</p>
+            
+            {% endif %}        
+        </div>
+
+    </body>
+
+</html>
