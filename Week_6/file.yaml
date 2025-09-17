@@ -1,0 +1,43 @@
+file_type: csv
+dataset_name: U.S._Chronic_Disease_Indicators
+file_name: U.S._Chronic_Disease_Indicators
+table_name: edsurv
+inbound_delimiter: ","
+outbound_delimiter: "|"
+skip_leading_rows: 1
+columns: 
+    - YearStart
+    - YearEnd
+    - LocationAbbr
+    - LocationDesc
+    - DataSource
+    - Topic
+    - Question
+    - Response
+    - DataValueUnit
+    - DataValueType
+    - DataValue
+    - DataValueAlt
+    - DataValueFootnoteSymbol
+    - DataValueFootnote
+    - LowConfidenceLimit
+    - HighConfidenceLimit
+    - StratificationCategory1
+    - Stratification1
+    - StratificationCategory2
+    - Stratification2
+    - StratificationCategory3
+    - Stratification3
+    - Geolocation
+    - LocationID
+    - TopicID
+    - QuestionID
+    - ResponseID
+    - DataValueTypeID
+    - StratificationCategoryID1
+    - StratificationID1
+    - StratificationCategoryID2 
+    - StratificationID2
+    - StratificationCategoryID3
+    - StratificationID3
+
